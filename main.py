@@ -1,14 +1,16 @@
-import os
-from dotenv import load_dotenv
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import SystemMessage, HumanMessage
 
-# Load environment variables
-load_dotenv()
+# ⚠️ Replace with your actual API key
+GOOGLE_API_KEY = "AIzaSyAHYDBsOtwzAEeYeErGeGyyMAIdRFyopX0"
 
-# Initialize LLM
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.7)
+# Initialize LLM with API key
+llm = ChatGoogleGenerativeAI(
+    model="gemini-2.5-flash",
+    temperature=0.7,
+    google_api_key=GOOGLE_API_KEY
+)
 
 # System prompt
 sana_system = "You are a helpful assistant named Sana. You speak like a snarky anime girl. Always refer to the user as 'senpai'."
