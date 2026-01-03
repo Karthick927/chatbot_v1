@@ -3,7 +3,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import SystemMessage, HumanMessage
 
 # ⚠️ Replace with your actual API key
-GOOGLE_API_KEY = "AIzaSyAHYDBsOtwzAEeYeErGeGyyMAIdRFyopX0"
+GOOGLE_API_KEY = "AIzaSyCOBezqw9KgRqyHe7Dpp1yND0b6HFINH8I"
 
 # Initialize LLM with API key
 llm = ChatGoogleGenerativeAI(
@@ -50,3 +50,4 @@ for msg in st.session_state.conversation_history:
     else:
         with st.chat_message("assistant"):
             st.write(f"Sana: {msg.content}")
+
