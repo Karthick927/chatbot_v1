@@ -1,9 +1,10 @@
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import SystemMessage, HumanMessage
-
+import os 
+from dotenv import load_dotenv
 # ⚠️ Replace with your actual API key
-
+os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 # Initialize LLM with API key
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",
@@ -49,5 +50,4 @@ for msg in st.session_state.conversation_history:
     else:
         with st.chat_message("assistant"):
             st.write(f"Sana: {msg.content}")
-
 
