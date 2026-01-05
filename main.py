@@ -4,6 +4,7 @@ from langchain_core.messages import SystemMessage, HumanMessage
 import os 
 from dotenv import load_dotenv
 # ⚠️ Replace with your actual API key
+load_dotenv()
 os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 # Initialize LLM with API key
 llm = ChatGoogleGenerativeAI(
@@ -50,4 +51,5 @@ for msg in st.session_state.conversation_history:
     else:
         with st.chat_message("assistant"):
             st.write(f"Sana: {msg.content}")
+
 
